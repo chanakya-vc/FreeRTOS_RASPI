@@ -1,0 +1,364 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+                              /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o (memcpy)
+/home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memset.o)
+                              /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o (memset)
+/home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-strncpy.o)
+                              /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o (strncpy)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RESERVED         0x0000000000000000 0x0000000000008000 r
+INIT_RAM         0x0000000000008000 0x0000000000008000 xrw
+RAM              0x0000000000010000 0x0000000008000000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/startup.o
+LOAD /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+
+.init           0x0000000000008000       0xa4
+ *(.init)
+ .init          0x0000000000008000       0xa4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/startup.o
+                0x0000000000008000                _start
+
+.module_entries
+                0x00000000000080a4        0x0
+                0x00000000000080a4                __module_entries_start = .
+ *(.module_entries)
+ *(.module_entries.*)
+                0x00000000000080a4                __module_entries_end = .
+                0x0000000000000000                __module_entries_size = SIZEOF (.module_entries)
+
+.text           0x0000000000010000     0x441c
+ *(.text)
+ .text          0x0000000000010000      0x344 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+                0x0000000000010000                pxPortInitialiseStack
+                0x0000000000010240                xPortStartScheduler
+                0x000000000001025c                vPortEndScheduler
+                0x0000000000010274                vTickISR
+ .text          0x0000000000010344      0x2ac /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+                0x0000000000010344                vPortISRStartFirstTask
+                0x00000000000103dc                vPortYieldProcessor
+                0x0000000000010490                vFreeRTOS_ISR
+                0x0000000000010540                vPortEnterCritical
+                0x0000000000010584                vPortExitCritical
+ .text          0x00000000000105f0      0x764 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+                0x00000000000105f0                xCoRoutineCreate
+                0x0000000000010758                vCoRoutineAddToDelayedList
+                0x0000000000010af8                vCoRoutineSchedule
+                0x0000000000010cc8                xCoRoutineRemoveFromEventList
+ .text          0x0000000000010d54      0x29c /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+                0x0000000000010d54                vListInitialise
+                0x0000000000010dbc                vListInitialiseItem
+                0x0000000000010de8                vListInsertEnd
+                0x0000000000010e80                vListInsert
+                0x0000000000010f58                vListRemove
+ .text          0x0000000000010ff0      0xbb0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+                0x0000000000010ff0                xQueueGenericReset
+                0x0000000000011104                xQueueGenericCreate
+                0x00000000000111cc                xQueueGenericSend
+                0x0000000000011370                xQueueGenericSendFromISR
+                0x000000000001144c                xQueueGenericReceive
+                0x0000000000011650                xQueueReceiveFromISR
+                0x0000000000011730                uxQueueMessagesWaiting
+                0x0000000000011764                uxQueueMessagesWaitingFromISR
+                0x0000000000011794                vQueueDelete
+                0x0000000000011acc                xQueueIsQueueEmptyFromISR
+                0x0000000000011b58                xQueueIsQueueFullFromISR
+ .text          0x0000000000011ba0     0x1920 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+                0x0000000000011ba0                xTaskGenericCreate
+                0x0000000000011de8                vTaskDelete
+                0x0000000000011ee8                vTaskDelayUntil
+                0x0000000000011ff8                vTaskDelay
+                0x000000000001207c                uxTaskPriorityGet
+                0x00000000000120d4                vTaskPrioritySet
+                0x000000000001227c                vTaskSuspend
+                0x0000000000012380                xTaskIsTaskSuspended
+                0x00000000000123fc                vTaskResume
+                0x00000000000124f4                xTaskResumeFromISR
+                0x0000000000012610                vTaskStartScheduler
+                0x00000000000126ac                vTaskEndScheduler
+                0x00000000000126e4                vTaskSuspendAll
+                0x0000000000012714                xTaskResumeAll
+                0x00000000000128b8                xTaskGetTickCount
+                0x00000000000128ec                xTaskGetTickCountFromISR
+                0x0000000000012924                uxTaskGetNumberOfTasks
+                0x0000000000012948                vTaskIncrementTick
+                0x0000000000012b64                vTaskSetApplicationTaskTag
+                0x0000000000012bc0                xTaskGetApplicationTaskTag
+                0x0000000000012c1c                xTaskCallApplicationTaskHook
+                0x0000000000012c98                vTaskSwitchContext
+                0x0000000000012da0                vTaskPlaceOnEventList
+                0x0000000000012e3c                xTaskRemoveFromEventList
+                0x0000000000012f54                vTaskSetTimeOutState
+                0x0000000000012f9c                xTaskCheckForTimeOut
+                0x0000000000013090                vTaskMissedYield
+ .text          0x00000000000134c0      0x3a0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+                0x0000000000013570                irqHandler
+                0x0000000000013610                irqUnblock
+                0x000000000001362c                irqBlock
+                0x0000000000013648                irqRegister
+                0x00000000000136ac                irqEnable
+                0x0000000000013780                irqDisable
+ .text          0x0000000000013860      0x5d8 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+                0x0000000000013860                SetGpioFunction
+                0x000000000001393c                SetGpioDirection
+                0x0000000000013970                SetGpio
+                0x0000000000013a28                ReadGpio
+                0x0000000000013a78                EnableGpioDetect
+                0x0000000000013c28                DisableGpioDetect
+                0x0000000000013de0                ClearGpioInterrupt
+ .text          0x0000000000013e38      0x4ac /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000000013e38                pvPortMalloc
+                0x0000000000014000                vPortFree
+                0x000000000001407c                xPortGetFreeHeapSize
+                0x00000000000140a0                vPortInitialiseBlocks
+ .text          0x00000000000142e4       0x18 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/startup.o
+ .text          0x00000000000142fc      0x120 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+                0x00000000000142fc                task1
+                0x0000000000014340                task2
+                0x0000000000014384                main
+ .text          0x000000000001441c        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .text          0x000000000001441c        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .text          0x000000000001441c        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-strncpy.o)
+
+.rodata         0x000000000001441c       0x3a
+ .rodata        0x000000000001441c        0x4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .rodata        0x0000000000014420        0x5 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ *fill*         0x0000000000014425        0x3 
+ .rodata        0x0000000000014428        0x4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .rodata        0x000000000001442c        0x4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+                0x000000000001442c                pRegs
+ .rodata        0x0000000000014430        0x8 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .rodata        0x0000000000014438       0x1e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+
+.glue_7         0x0000000000014458        0x0
+ .glue_7        0x0000000000014458        0x0 linker stubs
+
+.glue_7t        0x0000000000014458        0x0
+ .glue_7t       0x0000000000014458        0x0 linker stubs
+
+.vfp11_veneer   0x0000000000014458        0x0
+ .vfp11_veneer  0x0000000000014458        0x0 linker stubs
+
+.v4_bx          0x0000000000014458        0x0
+ .v4_bx         0x0000000000014458        0x0 linker stubs
+
+.iplt           0x0000000000014458        0x0
+ .iplt          0x0000000000014458        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+
+.text.memcpy    0x0000000000014458      0x114
+ .text.memcpy   0x0000000000014458      0x114 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+                0x0000000000014458                memcpy
+
+.text.memset    0x000000000001456c      0x114
+ .text.memset   0x000000000001456c      0x114 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memset.o)
+                0x000000000001456c                memset
+
+.text.strncpy   0x0000000000014680       0xdc
+ .text.strncpy  0x0000000000014680       0xdc /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-strncpy.o)
+                0x0000000000014680                strncpy
+
+.rel.dyn        0x000000000001475c        0x0
+ .rel.iplt      0x000000000001475c        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+
+.data           0x000000000001475c       0x12
+ *(.data)
+ .data          0x000000000001475c        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .data          0x000000000001475c        0x4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+                0x000000000001475c                ulCriticalNesting
+ .data          0x0000000000014760        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .data          0x0000000000014760        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .data          0x0000000000014760        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .data          0x0000000000014760        0x4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .data          0x0000000000014764        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .data          0x0000000000014764        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .data          0x0000000000014764        0x4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .data          0x0000000000014768        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/startup.o
+ .data          0x0000000000014768        0x6 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+ .data          0x000000000001476e        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .data          0x000000000001476e        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .data          0x000000000001476e        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-strncpy.o)
+
+.igot.plt       0x0000000000014770        0x0
+ .igot.plt      0x0000000000014770        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+
+.bss            0x0000000000014770     0x13e0
+                0x0000000000014770                __bss_start = .
+ *(.bss)
+ .bss           0x0000000000014770        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .bss           0x0000000000014770        0x4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+                0x0000000000014770                g_bStarted
+ .bss           0x0000000000014774       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+                0x00000000000147e0                pxCurrentCoRoutine
+ .bss           0x00000000000147f4        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .bss           0x00000000000147f4        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .bss           0x00000000000147f4      0x100 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+                0x00000000000147f4                pxCurrentTCB
+ .bss           0x00000000000148f4      0x24c /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .bss           0x0000000000014b40        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .bss           0x0000000000014b40     0x1010 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000000015b4c                allocated
+ .bss           0x0000000000015b50        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/startup.o
+ .bss           0x0000000000015b50        0x0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+ .bss           0x0000000000015b50        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .bss           0x0000000000015b50        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .bss           0x0000000000015b50        0x0 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-strncpy.o)
+ *(.bss.*)
+                0x0000000000015b50                __bss_end = .
+                0x0000000008010000                _estack = (ORIGIN (RAM) + LENGTH (RAM))
+LOAD /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/lib/gcc/arm-none-eabi/6.3.1/libgcc.a
+LOAD /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a
+OUTPUT(kernel.elf elf32-littlearm)
+
+.debug_info     0x0000000000000000     0x4a4e
+ .debug_info    0x0000000000000000      0x1ff /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .debug_info    0x00000000000001ff      0x187 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+ .debug_info    0x0000000000000386      0x474 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .debug_info    0x00000000000007fa      0xaaa /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .debug_info    0x00000000000012a4      0xf47 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .debug_info    0x00000000000021eb     0x154c /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .debug_info    0x0000000000003737      0x2b7 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .debug_info    0x00000000000039ee      0x3fe /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .debug_info    0x0000000000003dec      0xae8 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_info    0x00000000000048d4      0x17a /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+
+.debug_abbrev   0x0000000000000000     0x1066
+ .debug_abbrev  0x0000000000000000      0x11d /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .debug_abbrev  0x000000000000011d       0xd7 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+ .debug_abbrev  0x00000000000001f4      0x183 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .debug_abbrev  0x0000000000000377      0x1e4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .debug_abbrev  0x000000000000055b      0x255 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .debug_abbrev  0x00000000000007b0      0x2d0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .debug_abbrev  0x0000000000000a80      0x12d /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .debug_abbrev  0x0000000000000bad      0x149 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .debug_abbrev  0x0000000000000cf6      0x2a4 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_abbrev  0x0000000000000f9a       0xcc /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+
+.debug_aranges  0x0000000000000000      0x140
+ .debug_aranges
+                0x0000000000000000       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .debug_aranges
+                0x0000000000000020       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+ .debug_aranges
+                0x0000000000000040       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .debug_aranges
+                0x0000000000000060       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .debug_aranges
+                0x0000000000000080       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .debug_aranges
+                0x00000000000000a0       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .debug_aranges
+                0x00000000000000c0       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .debug_aranges
+                0x00000000000000e0       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .debug_aranges
+                0x0000000000000100       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_aranges
+                0x0000000000000120       0x20 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+
+.debug_line     0x0000000000000000     0x14eb
+ .debug_line    0x0000000000000000      0x138 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .debug_line    0x0000000000000138       0xbe /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+ .debug_line    0x00000000000001f6      0x204 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .debug_line    0x00000000000003fa      0x292 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .debug_line    0x000000000000068c      0x394 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .debug_line    0x0000000000000a20      0x5af /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .debug_line    0x0000000000000fcf       0xc0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .debug_line    0x000000000000108f       0xcd /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .debug_line    0x000000000000115c      0x21e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_line    0x000000000000137a      0x171 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+
+.debug_str      0x0000000000000000     0x1ac4
+ .debug_str     0x0000000000000000      0x1e9 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+                                        0x230 (size before relaxing)
+ .debug_str     0x00000000000001e9       0xe9 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+                                        0x1a7 (size before relaxing)
+ .debug_str     0x00000000000002d2      0x36c /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+                                        0x46d (size before relaxing)
+ .debug_str     0x000000000000063e      0x4ce /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+                                        0x676 (size before relaxing)
+ .debug_str     0x0000000000000b0c      0x34c /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+                                        0x912 (size before relaxing)
+ .debug_str     0x0000000000000e58      0x670 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+                                        0xd22 (size before relaxing)
+ .debug_str     0x00000000000014c8      0x160 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+                                        0x216 (size before relaxing)
+ .debug_str     0x0000000000001628      0x233 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+                                        0x2fc (size before relaxing)
+ .debug_str     0x000000000000185b      0x1cd /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+                                        0x6e6 (size before relaxing)
+ .debug_str     0x0000000000001a28       0x9c /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+                                        0x1c0 (size before relaxing)
+
+.comment        0x0000000000000000       0x7f
+ .comment       0x0000000000000000       0x7f /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+                                         0x80 (size before relaxing)
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .comment       0x000000000000007f       0x80 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+
+.ARM.attributes
+                0x0000000000000000       0x2c
+ .ARM.attributes
+                0x0000000000000000       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .ARM.attributes
+                0x000000000000002e       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+ .ARM.attributes
+                0x000000000000005c       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .ARM.attributes
+                0x000000000000008a       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .ARM.attributes
+                0x00000000000000b8       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .ARM.attributes
+                0x00000000000000e6       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .ARM.attributes
+                0x0000000000000114       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .ARM.attributes
+                0x0000000000000142       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .ARM.attributes
+                0x0000000000000170       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .ARM.attributes
+                0x000000000000019e       0x14 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/startup.o
+ .ARM.attributes
+                0x00000000000001b2       0x2e /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+ .ARM.attributes
+                0x00000000000001e0       0x30 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000000000000210       0x30 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000000000000240       0x30 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-strncpy.o)
+
+.debug_frame    0x0000000000000000      0xd04
+ .debug_frame   0x0000000000000000       0xac /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/port.o
+ .debug_frame   0x00000000000000ac       0x90 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/portable/GCC/RaspberryPi/portisr.o
+ .debug_frame   0x000000000000013c       0xf0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/croutine.o
+ .debug_frame   0x000000000000022c       0xb0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/list.o
+ .debug_frame   0x00000000000002dc      0x210 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/queue.o
+ .debug_frame   0x00000000000004ec      0x450 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/FreeRTOS/Source/tasks.o
+ .debug_frame   0x000000000000093c       0xf0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/irq.o
+ .debug_frame   0x0000000000000a2c       0xf0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/Drivers/gpio.o
+ .debug_frame   0x0000000000000b1c       0xd0 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build//FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_frame   0x0000000000000bec       0x64 /home/vc/Hyperloop/raspi/RaspberryPi-FreeRTOS/build/Demo/main.o
+ .debug_frame   0x0000000000000c50       0x44 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000000c94       0x30 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000cc4       0x40 /home/vc/Hyperloop/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/lib/libc.a(lib_a-strncpy.o)
